@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apelsin | Ro'yxatdan o'tish</title>
+    <link rel="stylesheet" href="{% static 'auth/style.css' %}">
+</head>
+<body>
+<section>
+  <div class="main-form-container">
+    <div id="form_section" class="form-container">
+
+<!--   Login ************************** ************    -->
+      <form method="post" action="{% url 'login' %}" enctype="multipart/form-data" class="login-form form-wraper ">
+        {% csrf_token %}
+        <div>
+          <div class="form-title">
+            <h2>Login</h2>
+            <h3 style="color:red;">{{ login_error }}</h3>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="username" name="username" class="myInput" type="text" />
+              </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Password" name="password" class="myInput" type="text" />
+              </span>
+            </div>
+          </div>
+          <div class="forget-password">
+            <a href="">FORGOT PASSWORD</a>
+          </div>
+          <div class="action-button">
+            <button type="submit">Login</button>
+          </div>
+        </div>
+      </form>
+
+<!--     Ro'yxatdan o'tish       *******************  -->
+      <div class="signUp-form form-wraper">
+        <div>
+          <div class="form-title">
+            <h2>Sign Up</h2>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Full Name" class="myInput" type="text" />
+              </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Email" class="myInput" type="text" />
+              </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Mobile No." class="myInput" type="number" />
+              </span>
+            </div>
+          </div>
+          <div style="margin-bottom: 0px;" class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Password" class="myInput" type="password" />
+              </span>
+            </div>
+          </div>
+          <div class="action-button">
+            <button>Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="multiple-btn" class="bg-btn-container">
+      <div class="action-button">
+        <button>Login</button>
+      </div>
+      <div class="action-button">
+        <button>Sign Up</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="{% static 'auth/scripts.js' %}">
+
+
+</script>
+
+</body>
+</html>
